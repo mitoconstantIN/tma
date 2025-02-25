@@ -1,0 +1,620 @@
+/* minecraft.css - Partea 1: Stiluri de bază și Hero Section */
+
+:root {
+    --minecraft-grass: #5C9A1F;
+    --minecraft-dirt: #8B5E34;
+    --minecraft-stone: #848484;
+    --minecraft-wood: #A0522D;
+    --minecraft-leaves: #395A1F;
+    --minecraft-diamond: #3AB3DA;
+    --minecraft-gold: #FED83D;
+    --minecraft-redstone: #FF0000;
+    --minecraft-obsidian: #1F1F1F;
+    --minecraft-text-shadow: 
+        2px 2px #000000,
+        -1px -1px 0 #000000,  
+        1px -1px 0 #000000,
+        -1px 1px 0 #000000,
+        1px 1px 0 #000000;
+        --minecraft-gradient-start: #3AB3DA;  /* Culoare diamond blue */
+    --minecraft-gradient-middle: #50C878;  /* Culoare emerald green */
+    --minecraft-gradient-end: #FFAA00;    /* Culoare gold */
+}
+
+/* Minecraft Font */
+@font-face {
+    font-family: 'MinecraftTen';
+    src: url('/fonts/MinecraftTen.ttf') format('truetype');
+}
+
+/* Hero Section */
+.course-hero {
+    background: linear-gradient(to bottom, #1F1F1F 0%, #2A2A2A 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Eliminăm .course-hero::before care crea punctele statice */
+
+@keyframes backgroundScroll {
+    from { background-position: 0 0; }
+    to { background-position: 0 100%; }
+}
+
+.hero-text h1 {
+    font-family: 'MinecraftTen', sans-serif;
+    font-size: 4rem;
+    color: var(--minecraft-diamond);
+    text-shadow: var(--minecraft-text-shadow);
+    animation: minecraft-glow 2s ease-in-out infinite;
+}
+
+.hero-text h2 {
+    font-family: 'MinecraftTen', sans-serif;
+    color: var(--minecraft-gold);
+    text-shadow: var(--minecraft-text-shadow);
+    animation: minecraft-bounce 3s ease-in-out infinite;
+}
+
+@keyframes minecraft-glow {
+    0%, 100% { text-shadow: var(--minecraft-text-shadow), 0 0 20px rgba(58, 179, 218, 0.5); }
+    50% { text-shadow: var(--minecraft-text-shadow), 0 0 30px rgba(58, 179, 218, 0.8); }
+}
+
+@keyframes minecraft-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Minecraft Buttons */
+.btn-primary, .btn-secondary {
+    font-family: 'MinecraftTen', sans-serif;
+    position: relative;
+    padding: 0.8rem 2rem;
+    border: none;
+    text-shadow: 2px 2px #000000;
+    transition: all 0.1s ease;
+    text-decoration: none;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--minecraft-diamond);
+    color: white;
+    box-shadow: 
+        inset -2px -4px rgba(0,0,0,0.5),
+        inset 2px 2px rgba(255,255,255,0.3);
+}
+
+.btn-secondary {
+    background: #7B7B7B;
+    color: #FFFFFF;
+    box-shadow: 
+        inset -2px -4px rgba(0,0,0,0.5),
+        inset 2px 2px rgba(255,255,255,0.3);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active, .btn-secondary:active {
+    filter: brightness(0.8);
+    transform: translateY(0);
+    box-shadow: 
+        inset 2px 4px rgba(0,0,0,0.5),
+        inset -2px -2px rgba(255,255,255,0.3);
+}
+
+/* Hero Badges */
+.hero-badges .badge {
+    font-family: 'MinecraftTen', sans-serif;
+    background: rgba(0,0,0,0.5);
+    border: 2px solid var(--minecraft-diamond);
+    color: #ffffff;
+    text-shadow: 1px 1px #000000;
+    padding: 0.5rem 1rem;
+    animation: badge-float 3s ease-in-out infinite;
+}
+
+@keyframes badge-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.hero-badges .badge:nth-child(2) {
+    animation-delay: 0.2s;
+    border-color: var(--minecraft-gold);
+}
+
+.hero-badges .badge:nth-child(3) {
+    animation-delay: 0.4s;
+    border-color: var(--minecraft-redstone);
+}
+
+/* Hero Image */
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    animation: blockFloat 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(58, 179, 218, 0.3));
+}
+
+@keyframes blockFloat {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg); 
+    }
+    25% { 
+        transform: translateY(-15px) rotate(3deg); 
+    }
+    75% { 
+        transform: translateY(-5px) rotate(-3deg); 
+    }
+}
+
+/* Minecraft Particles System */
+.projects-section h2 {
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255,255,255,0.5);
+ }
+.hero-description {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+ }
+.particle {
+    position: absolute;
+    left: -9999px;  /* Le mutăm în afara ecranului */
+    opacity: 0;     /* Le facem invizibile */
+    pointer-events: none;
+}
+
+/* Particulele animate rămân vizibile și funcționale */
+.particle-animated {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    left: auto;     /* Resetăm poziționarea pentru particulele animate */
+    opacity: 1;     /* Facem particulele animate vizibile */
+    pointer-events: none;
+    animation: float-up 4s ease-out forwards;
+}
+
+.particle.xp {
+    background: #7FFF00;
+}
+
+.particle.diamond {
+    background: var(--minecraft-diamond);
+    width: 4px;
+    height: 4px;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) translateX(var(--x-offset)) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* JavaScript va adăuga particule dinamic cu această animație */
+.particle-animated {
+    animation: float-up 2s ease-out forwards;
+}
+
+/* Adăugăm și un efect de strălucire pentru particule */
+.particle::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: inherit;
+    filter: blur(1px);
+    opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-badges {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}
+
+/* Minecraft Content Sections */
+
+/* Minecraft Content Sections */
+
+:root {
+    --minecraft-emerald: #50C878;
+    --minecraft-diamond: #3AB3DA;
+    --minecraft-gold: #FFAA00;
+    --minecraft-redstone: #FF0000;
+    --minecraft-obsidian: #1F1F1F;
+    --minecraft-grass: #5C9A1F;
+    --minecraft-wood: #8B4513;
+    --minecraft-glowstone: #FFFFE0;
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+    perspective: 1000px;
+}
+
+.feature-box {
+    background: linear-gradient(135deg, var(--minecraft-obsidian) 0%, #2A2A2A 100%);
+    border: 3px solid #373737;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: white;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.feature-box:nth-child(1) {
+    border-top: 3px solid var(--minecraft-diamond);
+}
+
+.feature-box:nth-child(2) {
+    border-top: 3px solid var(--minecraft-emerald);
+}
+
+.feature-box:nth-child(3) {
+    border-top: 3px solid var(--minecraft-gold);
+}
+
+.feature-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.feature-box:hover::after {
+    transform: translateX(100%);
+}
+
+.feature-box:hover {
+    transform: translateY(-8px) rotateX(5deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+
+.feature-box h3 {
+    font-family: 'MinecraftTen', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+}
+
+/* Learning Section - Minecraft Items Style */
+.minecraft-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.minecraft-tool {
+    background: linear-gradient(135deg, var(--minecraft-obsidian) 0%, #2A2A2A 100%);
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.minecraft-tool::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+}
+
+.minecraft-tool:nth-child(1)::before { background: var(--minecraft-diamond); }
+.minecraft-tool:nth-child(2)::before { background: var(--minecraft-emerald); }
+.minecraft-tool:nth-child(3)::before { background: var(--minecraft-gold); }
+.minecraft-tool:nth-child(4)::before { background: var(--minecraft-redstone); }
+.minecraft-tool:nth-child(5)::before { background: var(--minecraft-grass); }
+.minecraft-tool:nth-child(6)::before { background: var(--minecraft-glowstone); }
+
+.minecraft-tool:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.tool-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+
+.minecraft-tool h3 {
+    font-family: 'MinecraftTen', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+}
+
+.minecraft-tool p {
+    color: #ECECEC;
+    line-height: 1.6;
+}
+
+/* Skills Section - Enchantment Table Style */
+.skills-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2A2A2A 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.skills-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 50%, var(--minecraft-diamond) 0%, transparent 10%),
+        radial-gradient(circle at 70% 50%, var(--minecraft-emerald) 0%, transparent 10%);
+    opacity: 0.1;
+    animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.skill-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 0 30px rgba(255,255,255,0.1);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.skill-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: currentColor;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.skill-card:hover .skill-icon::after {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.1;
+}
+
+/* Projects Section - Nether Portal Style */
+.projects-section {
+    background: linear-gradient(135deg, #2A1B3D 0%, #1F1F1F 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        transparent 0%, 
+        rgba(255,255,255,0.1) 50%, 
+        transparent 100%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.project-card:hover::before {
+    transform: translateX(100%);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.project-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--minecraft-diamond);
+}
+
+.project-card:nth-child(2) .project-icon {
+    color: var(--minecraft-emerald);
+}
+
+.project-card:nth-child(3) .project-icon {
+    color: var(--minecraft-gold);
+}
+
+.project-card h3 {
+    font-family: 'MinecraftTen', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+}
+
+.project-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-card ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: rgba(255,255,255,0.8);
+}
+
+.project-card ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: currentColor;
+}
+.minecraft-gradient {
+    background: linear-gradient(
+        45deg, 
+        var(--minecraft-gradient-start), 
+        var(--minecraft-gradient-middle), 
+        var(--minecraft-gradient-end)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Gradient subtil pentru secțiunile principale */
+.minecraft-section {
+    background: linear-gradient(
+        135deg, 
+        rgba(58, 179, 218, 0.1), 
+        rgba(80, 200, 120, 0.1), 
+        rgba(255, 170, 0, 0.1)
+    );
+}
+
+/* Îmbunătățire contrast pentru text pe fundaluri întunecate */
+.minecraft-dark {
+    color: #E0E0E0;  /* Un text ușor deschis pentru lizibilitate */
+}
+
+.minecraft-dark h2, 
+.minecraft-dark h3 {
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Efect de strălucire pentru titluri */
+.minecraft-title-glow {
+    text-shadow: 
+        0 0 10px rgba(58, 179, 218, 0.7),
+        0 0 20px rgba(80, 200, 120, 0.5);
+}
+
+/* Media query pentru responsive design */
+@media (max-width: 768px) {
+    .minecraft-gradient {
+        font-size: 0.9em;  /* Micșorăm puțin textul pe ecrane mici */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .features,
+    .project-carousel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .minecraft-tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .features,
+    .project-carousel {
+        grid-template-columns: 1fr;
+    }
+}

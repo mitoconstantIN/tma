@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO SPIKE Prime - Robotică Avansată</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/prime.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="logo">
+                <img src="../assets/images/logo-techminds-sigla.png" alt="TMA Logo">
+            </a>  
+            <button class="menu-button">☰</button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Acasă</a></li>
+                <li class="dropdown">
+                    <a href="../index.html">Programare</a>
+                    <div class="dropdown-content">
+                        <a href="scratch.html">Scratch</a>
+                        <a href="thunkable.html">Thunkable</a>
+                        <a href="gdevelop.html">GDevelop</a>
+                        <a href="minecraft.html">Minecraft</a>
+                        <a href="roblox.html">Roblox</a>
+                        <a href="godot.html">Godot</a>
+                        <a href="greenfoot.html">Greenfoot</a>
+                        <a href="python.html">Python</a>
+                        <a href="frontend.html">Frontend</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="../robotics.html">Robotică</a>
+                    <div class="dropdown-content">
+                        <a href="essentials.html">LEGO Essentials</a>
+                        <a href="prime.html">LEGO Prime</a>
+                        <a href="microbit.html">micro:bit</a>
+                        <a href="arduino.html">Arduino</a>
+                    </div>
+                <li><a href="../about.html">Despre noi</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- New Hero Section -->
+    <section class="prime-hero">
+        <div class="prime-hero-content">
+            <div class="prime-hero-text">
+                <h1 class="prime-hero-heading">Descoperă Viitorul Roboticii cu SPIKE Prime</h1>
+                <p class="prime-hero-subtext">
+                    Un program avansat de robotică pentru tinerii pasionați de tehnologie, 
+                    combinând ingineria cu inteligența artificială și programarea Python.
+                </p>
+                <div class="course-info">
+                    <span><i class="fas fa-users"></i> Vârsta: 10-14 ani</span>
+                    <span><i class="fas fa-clock"></i> 16 săptămâni × 2 ore</span>
+                    <span><i class="fas fa-layer-group"></i> Nivel: Avansat</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#enroll" class="prime-button primary">Înscrie-te Acum</a>
+                    <a href="#discover" class="prime-button secondary">Descoperă Mai Mult</a>
+                </div>
+            </div>
+            <div class="prime-hero-image">
+                <img src="../assets/images/prime.webp" alt="SPIKE Prime Robot">
+            </div>
+        </div>
+    </section>
+
+    <section class="interactive-prime">
+        <div class="prime-hub">
+            <div class="hub-matrix">
+                <!-- 5x5 LED Matrix pentru hub-ul SPIKE Prime -->
+                <div class="prime-led"></div>
+                <div class="prime-led"></div>
+                <div class="prime-led"></div>
+                <div class="prime-led"></div>
+                <div class="prime-led"></div>
+            </div>
+            <div class="hub-buttons">
+                <button class="center-button"></button>
+                <div class="direction-buttons">
+                    <button class="left-button">◀</button>
+                    <button class="right-button">▶</button>
+                </div>
+            </div>
+            <div class="hub-ports">
+                <div class="port">A</div>
+                <div class="port">B</div>
+                <div class="port">C</div>
+                <div class="port">D</div>
+                <div class="port">E</div>
+                <div class="port">F</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="discover" class="technologies">
+        <h2>Tehnologii Avansate</h2>
+        <div class="tech-grid">
+            <div class="tech-item fade-in">
+                <i class="fas fa-microchip"></i>
+                <h3>Procesare Multi-Core</h3>
+                <p>Hub inteligent cu capacități avansate de procesare pentru proiecte complexe</p>
+            </div>
+            <div class="tech-item fade-in">
+                <i class="fas fa-robot"></i>
+                <h3>Senzori Preciși</h3>
+                <p>Senzori de forță, culoare, distanță și giroscop pentru control exact</p>
+            </div>
+            <div class="tech-item fade-in">
+                <i class="fas fa-code"></i>
+                <h3>Programare Python</h3>
+                <p>De la blocuri vizuale la cod Python pentru control avansat</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Showcase -->
+    <section class="project-showcase">
+        <h2>Proiecte Avansate</h2>
+        <div class="showcase-grid">
+            <div class="project-card">
+                <img src="../assets/images/robotautonom.png" alt="Robot Autonom" class="project-image">
+                <div class="project-overlay">
+                    <h3>Robot Autonom de Explorare</h3>
+                    <p>Sistem de navigație bazat pe SLAM cu evitare dinamică de obstacole</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="../assets/images/robotsortator.webp" alt="Robot Sortator" class="project-image">
+                <div class="project-overlay">
+                    <h3>Sistem Inteligent de Sortare</h3>
+                    <p>Sortare obiecte folosind computer vision și rețele neuronale</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="../assets/images/bratrobotic.webp" alt="Braț Robotic" class="project-image">
+                <div class="project-overlay">
+                    <h3>Braț Robotic Precis</h3>
+                    <p>Control cinematic invers pentru manipulare precisă de obiecte</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section class="learning-path">
+        <h2>Parcurs Educational</h2>
+        <div class="path-timeline">
+            <div class="timeline-item">
+                <div class="timeline-content slide-in">
+                    <h3>Fundamente Robotice</h3>
+                    <p>Mecanică avansată, senzori și actuatori, cinematică de bază</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content slide-in">
+                    <h3>Programare Python</h3>
+                    <p>Tranziție la Python, algoritmi de control, procesare date senzoriale</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content slide-in">
+                    <h3>Inteligență Artificială</h3>
+                    <p>Machine learning de bază, computer vision, comportament adaptiv</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content slide-in">
+                    <h3>Proiect Complex</h3>
+                    <p>Dezvoltarea unui proiect propriu integrând toate conceptele învățate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>Experiențe ale Cursanților</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-card">
+                <p>"Cursul de SPIKE Prime mi-a deschis o nouă perspectivă asupra roboticii. Am învățat nu doar să construiesc, ci să și programez roboți inteligenți."</p>
+                <div class="testimonial-author">
+                    <img src="../assets/images/testimonialAlex.webp" alt="Alex" class="author-avatar">
+                    <div>
+                        <h4>Alex M.</h4>
+                        <span>11 ani, Cursant SPIKE Prime</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Trecerea de la programarea block-based la Python a fost naturală datorită instructorilor excelenți. Acum pot crea proiecte mult mai complexe!"</p>
+                <div class="testimonial-author">
+                    <img src="../assets/images/testimonialMaria.webp" alt="Maria" class="author-avatar">
+                    <div>
+                        <h4>Maria P.</h4>
+                        <span>13 ani, Cursantă SPIKE Prime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Matrix -->
+    <section class="skills-matrix">
+        <h2>Competențe Dezvoltate</h2>
+        <div class="matrix-grid">
+            <div class="matrix-item">
+                <div class="skill-level" style="--level: 90%">
+                    <span>Robotică</span>
+                    <div class="level-bar"></div>
+                </div>
+                <ul class="skill-details">
+                    <li>Mecanică avansată</li>
+                    <li>Cinematică</li>
+                    <li>Control precis</li>
+                </ul>
+            </div>
+            <div class="matrix-item">
+                <div class="skill-level" style="--level: 85%">
+                    <span>Programare</span>
+                    <div class="level-bar"></div>
+                </div>
+                <ul class="skill-details">
+                    <li>Python</li>
+                    <li>Algoritmi</li>
+                    <li>Structuri de date</li>
+                </ul>
+            </div>
+            <div class="matrix-item">
+                <div class="skill-level" style="--level: 80%">
+                    <span>AI</span>
+                    <div class="level-bar"></div>
+                </div>
+                <ul class="skill-details">
+                    <li>Machine Learning</li>
+                    <li>Computer Vision</li>
+                    <li>Procesare semnal</li>
+                </ul>
+            </div>
+            <div class="matrix-item">
+                <div class="skill-level" style="--level: 75%">
+                    <span>Soft Skills</span>
+                    <div class="level-bar"></div>
+                </div>
+                <ul class="skill-details">
+                    <li>Problem Solving</li>
+                    <li>Lucru în echipă</li>
+                    <li>Management proiect</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competition Section -->
+    <section class="competitions">
+        <h2>Pregătire pentru Competiții</h2>
+        <div class="competition-grid">
+            <div class="competition-card">
+                <img src="../assets/images/firstLEGOleague.png" alt="First Lego League" class="competition-logo">
+                <h3>First Lego League</h3>
+                <p>Pregătire specializată pentru competiții internaționale de robotică</p>
+            </div>
+            <div class="competition-card">
+                <img src="../assets/images/robochallenge.jpg" alt="RoboChallenge" class="competition-logo">
+                <h3>RoboChallenge</h3>
+                <p>Participare la cea mai mare competiție de robotică din România</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="prime-cta">
+        <div class="cta-content">
+            <h2>Pregătit să Începi Aventura în Robotică?</h2>
+            <p>Alătură-te programului SPIKE Prime și dezvoltă-ți abilitățile tehnice într-un mediu creativ și inovator.</p>
+            <div class="cta-buttons">
+                <a href="#enroll" class="prime-button primary">Înscrie-te Acum</a>
+                <a href="../contact.html" class="prime-button secondary">Programează o Consultație</a>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: contact@tma.ro</li>
+                    <li>Telefon: 0700 000 000</li>
+                    <li>Adresă: Strada Exemplu, Nr. 123</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Cursuri robotică</h3>
+                <ul>
+                    <li><a href="/courses/spike-essentials.html">SPIKE Essentials</a></li>
+                    <li><a href="/courses/spike-prime.html">SPIKE Prime</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Informații</h3>
+                <ul>
+                    <li><a href="/about.html">Despre noi</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/terms.html">Termeni și condiții</a></li>
+                    <li><a href="/privacy.html">Confidențialitate</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TMA Robotică. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Intersection Observer for animations
+        const observeElements = (elements, className) => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(className);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            elements.forEach(element => observer.observe(element));
+        };
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            observeElements(document.querySelectorAll('.fade-in'), 'visible');
+            observeElements(document.querySelectorAll('.slide-in'), 'visible');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.slide-in').forEach(item => {
+        observer.observe(item);
+    });
+});
+
+// Animație pentru LED-urile SPIKE Prime
+function animatePrimeLEDs() {
+    const leds = document.querySelectorAll('.prime-led');
+    let currentLed = 0;
+
+    setInterval(() => {
+        leds.forEach(led => led.classList.remove('active'));
+        leds[currentLed].classList.add('active');
+        currentLed = (currentLed + 1) % leds.length;
+    }, 1000);
+}
+
+// Adaugă în DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    // ... codul existent ...
+    animatePrimeLEDs();
+});
+    </script>
+</body>
+</html>

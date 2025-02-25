@@ -1,0 +1,481 @@
+/* greenfoot.css - Stiluri pentru pagina Greenfoot */
+
+:root {
+    --java-blue: #5382A1;
+    --java-red: #F8981D;
+    --java-dark-blue: #1B365D;
+    --java-light: #F5F5F5;
+    --ide-bg: #1E1E1E;
+    --ide-text: #D4D4D4;
+    --ide-keyword: #569CD6;
+    --ide-string: #CE9178;
+    --ide-comment: #6A9955;
+}
+
+/* Hero Section */
+.greenfoot-hero {
+    background: var(--ide-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Code Rain Effect */
+.code-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.code-rain::before {
+    content: 'public class Main { void start() { System.out.println("Hello"); } }';
+    position: absolute;
+    color: var(--java-blue);
+    opacity: 0.1;
+    font-family: monospace;
+    white-space: nowrap;
+    animation: codeRain 20s linear infinite;
+    text-shadow: 0 0 5px var(--java-blue);
+}
+
+@keyframes codeRain {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(50%);
+    }
+}
+
+/* Typing Effect */
+.hero-text h1 {
+    font-size: 4.5rem;
+    color: var(--java-blue);
+    text-shadow: 
+        0 0 10px rgba(83, 130, 161, 0.5),
+        2px 2px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: typing 3s steps(30, end);
+}
+
+@keyframes typing {
+    from { 
+        width: 0;
+        border-right: 2px solid var(--java-blue);
+    }
+    to { 
+        width: 100%;
+        border-right: none;
+    }
+}
+
+.hero-text h2 {
+    color: var(--java-red);
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* IDE-style Badges */
+.hero-badges .badge {
+    background: var(--ide-bg);
+    border: 1px solid var(--java-blue);
+    color: var(--ide-text);
+    padding: 0.5rem 1.5rem;
+    font-family: monospace;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-badges .badge::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(83, 130, 161, 0.2),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    from { transform: translateX(-100%) rotate(45deg); }
+    to { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Java Buttons */
+.java-btn {
+    background: var(--java-blue);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.java-btn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    top: 0;
+    left: -100%;
+    transition: 0.5s;
+}
+
+.java-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(83, 130, 161, 0.3);
+}
+
+.java-btn:hover::before {
+    left: 100%;
+}
+
+.btn-secondary.java-btn {
+    background: transparent;
+    border: 2px solid var(--java-blue);
+    color: var(--java-blue);
+}
+
+.btn-secondary.java-btn:hover {
+    background: var(--java-blue);
+    color: white;
+}
+
+/* Hero Image with IDE Effect */
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    position: relative;
+    z-index: 2;
+    animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(83, 130, 161, 0.3));
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(2deg);
+    }
+}
+
+/* Code Editor Lines */
+.code-lines {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    background: var(--ide-bg);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    font-family: monospace;
+    color: var(--ide-text);
+    opacity: 0.5;
+}
+
+.code-lines span {
+    line-height: 1.5;
+    font-size: 12px;
+}
+/* Content Sections */
+
+/* Feature Boxes */
+.java-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.java-box {
+    background: var(--ide-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    color: var(--ide-text);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(83, 130, 161, 0.1);
+    transition: all 0.3s ease;
+}
+
+.java-box::before {
+    content: '{ }';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--java-blue);
+    opacity: 0.1;
+    font-family: monospace;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.java-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--java-blue);
+}
+
+.java-box:hover::before {
+    opacity: 0.2;
+    transform: rotate(10deg);
+}
+
+/* Learning Items */
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.java-item {
+    background: var(--ide-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    color: var(--ide-text);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.java-item::before {
+    content: 'public class';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-family: monospace;
+    color: var(--ide-keyword);
+    opacity: 0.1;
+    font-size: 0.8rem;
+    transform: rotate(-45deg);
+    transition: all 0.3s ease;
+}
+
+.java-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.java-item:hover::before {
+    opacity: 0.2;
+    transform: rotate(0deg);
+}
+
+/* Skills Section */
+.java-skill {
+    background: var(--ide-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    color: var(--ide-text);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress {
+    width: 100%;
+    height: 4px;
+    background: rgba(83, 130, 161, 0.1);
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, var(--java-blue), var(--java-red));
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.java-skill:hover .skill-progress::after {
+    transform: translateX(0);
+}
+
+/* Projects Section */
+.java-project {
+    background: var(--ide-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    color: var(--ide-text);
+    position: relative;
+    overflow: hidden;
+}
+
+.java-project::before {
+    content: '@Override';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--ide-keyword);
+    opacity: 0.1;
+    font-family: monospace;
+    font-size: 0.8rem;
+}
+
+.java-project:hover {
+    transform: translateY(-5px);
+}
+
+.project-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--java-blue);
+    transition: all 0.3s ease;
+}
+
+.java-project:hover .project-icon {
+    transform: scale(1.2);
+    color: var(--java-red);
+}
+
+/* Section Backgrounds */
+.java-dark {
+    background: var(--ide-bg);
+    color: var(--ide-text);
+    position: relative;
+    overflow: hidden;
+}
+
+.java-dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, transparent 48%, rgba(83, 130, 161, 0.1) 50%, transparent 52%);
+    background-size: 20px 20px;
+}
+
+.java-light {
+    background: var(--java-light);
+    color: var(--java-dark-blue);
+    position: relative;
+}
+
+/* CTA Section */
+.java-cta {
+    background: var(--java-dark-blue);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.java-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        transparent 0%,
+        rgba(83, 130, 161, 0.1) 100%
+    );
+}
+
+/* Editor Lines Effect */
+.editor-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 24px,
+        rgba(83, 130, 161, 0.03) 24px,
+        rgba(83, 130, 161, 0.03) 25px
+    );
+    pointer-events: none;
+}
+.hero-description {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+ }
+
+/* Code Comments */
+.code-comment {
+    font-family: monospace;
+    color: var(--ide-comment);
+    opacity: 0.7;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .java-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .learning-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+    
+    .java-grid,
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .java-btn {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}

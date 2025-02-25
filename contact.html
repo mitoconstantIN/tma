@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+         html {
+            scroll-behavior: smooth;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .top-nav {
+            background-color: #234291;
+            padding: 1rem;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        /* Hero section */
+        .hero-section {
+            min-height: 40vh;
+            background: #3857D6;
+            width: 100%;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .techminds-logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            max-width: 800px;
+            color: white;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: white;
+            color: #3857D6;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Main content */
+        .main-content {
+            max-width: 1200px;
+            margin: -60px auto 40px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .contact-form h2 {
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3857D6;
+            box-shadow: 0 0 0 3px rgba(56, 87, 214, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #3857D6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #2d45ac;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: #3857D6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            color: white;
+        }
+
+        .info-content h3 {
+            font-size: 16px;
+            margin-bottom: 4px;
+            color: #1a1a1a;
+        }
+
+        .info-content p {
+            color: #6b7280;
+            font-size: 14px;
+            word-wrap: break-word;
+            white-space: normal;
+            max-width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .info-content p {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+        }
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+                margin-top: 40px;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+
+            .contact-info {
+                order: -1;
+            }
+
+            .hero-section {
+                padding: 40px 20px;
+            }
+
+            .techminds-logo {
+                display: none;
+            }
+        }
+        
+
+        /* Tablet Responsive */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 3fr 2fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .top-nav {
+            background-color: #234291;
+            padding: 1rem;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        /* Hero section */
+        .hero-section {
+            background: linear-gradient(135deg, #3857D6, #234291);
+            width: 100%;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            color: white;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            top: 10%;
+            left: 15%;
+            animation: moveBubble 5s infinite alternate ease-in-out;
+        }
+
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            bottom: 10%;
+            right: 20%;
+            animation: moveBubble 6s infinite alternate ease-in-out;
+        }
+
+        @keyframes moveBubble {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-30px); }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: white;
+            color: #3857D6;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Input animations */
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            transform: scale(1.02);
+            border-color: #3857D6;
+            box-shadow: 0 0 10px rgba(56, 87, 214, 0.2);
+        }
+
+        #contact-form {
+            scroll-margin-top: 100px; /* Ajustează acest offset în funcție de înălțimea meniului */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+   <nav class="navbar">
+    <div class="nav-content">
+        <a href="index.html" class="logo">
+            <img src="./assets/images/logo-techminds-sigla.png" alt="TMA Logo">
+        </a>  
+        <button class="menu-button">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Acasă</a></li>
+            <li class="dropdown">
+                <a href="programare.html">Programare</a>
+                <div class="dropdown-content">
+                    <a href="courses/scratch.html">Scratch</a>
+                    <a href="courses/thunkable.html">Thunkable</a>
+                    <a href="courses/gdevelop.html">GDevelop</a>
+                    <a href="courses/minecraft.html">Minecraft</a>
+                    <a href="courses/roblox.html">Roblox</a>
+                    <a href="courses/godot.html">Godot</a>
+                    <a href="courses/greenfoot.html">Greenfoot</a>
+                    <a href="courses/python.html">Python</a>
+                    <a href="courses/frontend.html">Frontend</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="robotics.html">Robotică</a>
+                <div class="dropdown-content">
+                    <a href="courses/essentials.html">LEGO Essentials</a>
+                    <a href="courses/prime.html">LEGO Prime</a>
+                    <a href="courses/microbit.html">micro:bit</a>
+                    <a href="courses/arduino.html">Arduino</a>
+                </div>
+            <li><a href="about.html">Despre noi</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Contactează-ne</h1>
+            <p>Ai întrebări sau vrei să afli mai multe despre cursurile noastre? Scrie-ne și te vom ajuta cu plăcere!</p>
+            <a href="#contact-form" class="cta-button">Trimite un mesaj</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Contact Form -->
+        <div class="contact-form" id="contact-form">
+            <h2>Trimite un mesaj</h2>
+            <form id="contactForm" action="https://formspree.io/f/myzkapon" method="POST">
+                <div class="form-group">
+                    <label for="name">Nume complet:</label>
+                    <input type="text" id="name" name="name" placeholder="Nume complet" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="course">Selectează un curs:</label>
+                    <select id="course" name="course" required>
+                        <option value="">Alege un curs</option>
+                        <option>Python pentru Începători</option>
+                        <option>Robotică și Arduino</option>
+                        <option>Web Development</option>
+                        <option>AI și Machine Learning</option>
+                        <option>Game Development</option>
+                    </select>
+                </div>
+            
+                <div class="form-group">
+                    <label for="message">Mesajul tău:</label>
+                    <textarea id="message" name="message" placeholder="Scrie mesajul tău" required></textarea>
+                </div>
+            
+                <button type="submit">Trimite mesajul</button>
+            </form>
+            
+            
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <div class="info-item">
+                <div class="info-icon">📍</div>
+                <div class="info-content">
+                    <h3>Locație</h3>
+                    <p>Strada Știrbei Vodă, Nr. 26-28, Etaj 3,</p>
+                    <p> II Union Business Center Sector 1, București</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">📧</div>
+                <div class="info-content">
+                    <h3>Email</h3>
+                    <p>inscrieri@techminds-academy.ro</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">📱</div>
+                <div class="info-content">
+                    <h3>Telefon</h3>
+                    <p>+40 758 707 448</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Oprim redirecționarea
+
+    const form = this;
+    const button = form.querySelector('button');
+    const originalText = button.textContent;
+
+    button.textContent = 'Se trimite...';
+    button.style.opacity = '0.8';
+
+    // Trimitem datele către Formspree prin Fetch API
+    fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            button.textContent = 'Mesaj trimis! ✓';
+            button.style.background = '#10b981';
+            form.reset(); // Resetăm formularul după trimitere
+
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '';
+                button.style.opacity = '1';
+            }, 3000);
+        } else {
+            button.textContent = 'Eroare! Încearcă din nou.';
+            button.style.background = '#e63946';
+        }
+    }).catch(error => {
+        button.textContent = 'Eroare! Verifică conexiunea.';
+        button.style.background = '#e63946';
+    });
+});
+
+        // Input animations
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'translateY(-2px)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+
+    <!-- modify this form HTML and place wherever you want your form -->
+
+</body>
+
+ <!-- Footer -->
+ <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+                <li>Email: contact@tma.ro</li>
+                <li>Telefon: +40 758 707 448</li>
+                <li>Adresă: Strada Exemplu, Nr. 123</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Cursuri populare</h3>
+            <ul>
+                <li><a href="/courses/scratch.html">Scratch</a></li>
+                <li><a href="/courses/python.html">Python</a></li>
+                <li><a href="/courses/minecraft.html">Minecraft</a></li>
+                <li><a href="/courses/roblox.html">Roblox</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Cursuri avansate</h3>
+            <ul>
+                <li><a href="/courses/godot.html">Godot</a></li>
+                <li><a href="/courses/frontend.html">Frontend</a></li>
+                <li><a href="/courses/greenfoot.html">Greenfoot</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Informații</h3>
+            <ul>
+                <li><a href="/about.html">Despre noi</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/terms.html">Termeni și condiții</a></li>
+                <li><a href="/privacy.html">Confidențialitate</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 TMA. Toate drepturile rezervate.</p>
+    </div>
+</footer>
+
+</html>

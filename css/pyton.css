@@ -1,0 +1,426 @@
+/* python.css - Stiluri pentru pagina Python */
+
+:root {
+    --python-blue: #306998;
+    --python-yellow: #FFD43B;
+    --python-dark-blue: #1C415B;
+    --python-light-yellow: #FFE873;
+    --editor-bg: #282C34;
+    --editor-text: #ABB2BF;
+    --editor-comment: #98C379;
+    --editor-keyword: #C678DD;
+    --editor-string: #E5C07B;
+    --editor-function: #61AFEF;
+}
+
+/* Hero Section */
+.python-hero {
+    background: var(--editor-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Code Editor Effect */
+.code-editor-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--editor-bg);
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    color: var(--editor-text);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards 0.5s;
+}
+
+.editor-line {
+    margin: 8px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.editor-line::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--python-yellow);
+}
+
+/* Python Code Cards */
+.code-example {
+    background: var(--editor-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.code-example pre {
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+    color: var(--editor-text);
+}
+
+.code-example .keyword {
+    color: var(--editor-keyword);
+}
+
+.code-example .string {
+    color: var(--editor-string);
+}
+
+.code-example .function {
+    color: var(--editor-function);
+}
+
+.code-example .comment {
+    color: var(--editor-comment);
+}
+
+/* Fun Python Examples */
+.python-examples {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.python-example-card {
+    background: var(--editor-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.python-example-card::before {
+    content: '# Python Power';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: var(--editor-comment);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+.python-example-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+
+.code-content {
+    color: #1abc9c; /* Turcoaz cod */
+ }
+ .python-example-card h4 {
+    color: #e74c3c;
+    text-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
+ }
+.code-content {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+}
+
+/* Code Animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.typing-code {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--python-yellow);
+    animation: 
+        typing 2s steps(40, end),
+        blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--python-yellow); }
+}
+
+/* Hero Text */
+.hero-text h1 {
+    font-size: 4.5rem;
+    color: var(--python-yellow);
+    text-shadow: 
+        0 0 10px rgba(255, 212, 59, 0.5),
+        2px 2px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.hero-text h2 {
+    color: var(--editor-text);
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+
+/* Python-specific Buttons */
+.python-btn {
+    background: var(--python-blue);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.python-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(255,255,255,0.2) 0%,
+        transparent 50%
+    );
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+.python-btn:hover::before {
+    transform: scale(1);
+}
+
+.python-btn:hover {
+    background: var(--python-dark-blue);
+    transform: translateY(-2px);
+}
+
+/* Code Particles */
+.code-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.1;
+}
+
+/* Content Sections */
+
+/* Learning Section */
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.python-item {
+    background: var(--editor-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    color: var(--editor-text);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.python-item::before {
+    content: '>>>';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'Fira Code', monospace;
+    color: var(--python-yellow);
+    opacity: 0.2;
+}
+
+.python-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.python-item:hover::before {
+    opacity: 0.4;
+}
+
+.code-sample {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: var(--editor-function);
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: 4px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.python-item:hover .code-sample {
+    opacity: 1;
+    transform: translateX(10px);
+}
+
+/* Skills Section */
+.python-skill {
+    background: var(--editor-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    color: var(--editor-text);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 4px;
+    background: rgba(48, 105, 152, 0.1);
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, var(--python-blue), var(--python-yellow));
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.python-skill:hover .skill-progress::after {
+    transform: translateX(0);
+}
+
+/* Projects Section */
+.python-project {
+    background: var(--editor-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    color: var(--editor-text);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.python-project::before {
+    content: 'import project';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'Fira Code', monospace;
+    color: var(--editor-keyword);
+    font-size: 0.8rem;
+    opacity: 0.3;
+}
+
+.python-project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.python-project ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.python-project ul li::before {
+    content: '#';
+    position: absolute;
+    left: 0;
+    color: var(--editor-comment);
+}
+
+/* Section Backgrounds */
+.python-dark {
+    background: var(--editor-bg);
+    color: var(--editor-text);
+    position: relative;
+}
+
+.python-light {
+    background: #F5F5F5;
+    color: var(--python-dark-blue);
+}
+
+/* Section Titles */
+.section-title {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.python-gradient {
+    background: linear-gradient(90deg, var(--python-blue), var(--python-yellow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* CTA Section */
+.python-cta {
+    background: linear-gradient(135deg, var(--python-dark-blue) 0%, var(--editor-bg) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.python-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%23306998' fill-opacity='0.1' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H224V21.9a5 5 0 1 1 2 0V98h-41.41L146 139.41v90.69zm-130-32a5 5 0 1 1-2 0v-99.51L34.59 96H0v2h34.59L64 127.41v90.69zm0-32a5 5 0 1 1-2 0v-99.51L34.59 64H0v2h34.59L64 95.41v90.69zm0-32a5 5 0 1 1-2 0v-99.51L34.59 32H0v2h34.59L64 63.41v90.69z'%3E%3C/path%3E%3C/svg%3E");
+    opacity: 0.1;
+}
+.hero-description {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+ }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .python-examples {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .python-examples {
+        grid-template-columns: 1fr;
+    }
+    
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .code-example {
+        font-size: 0.8rem;
+    }
+    
+    .python-btn {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}

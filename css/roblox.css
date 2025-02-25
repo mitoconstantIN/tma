@@ -1,0 +1,582 @@
+/* roblox.css - Stiluri pentru pagina Roblox */
+
+:root {
+    --roblox-red: #E2231A;
+    --roblox-light-red: #FF4D4D;
+    --roblox-dark: #232527;
+    --roblox-light: #F2F4F5;
+    --roblox-accent: #00A2FF;
+    --roblox-gradient: linear-gradient(135deg, var(--roblox-red) 0%, #FF6B6B 100%);
+}
+
+/* Hero Section */
+.roblox-hero {
+    background: var(--roblox-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.roblox-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(226, 35, 26, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(0, 162, 255, 0.15) 0%, transparent 50%);
+    animation: backgroundPulse 8s ease-in-out infinite;
+}
+
+@keyframes backgroundPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Roblox 3D Cube */
+.roblox-cube {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: -50px;
+    top: 50%;
+    transform-style: preserve-3d;
+    animation: rotateCube 20s linear infinite;
+}
+
+.roblox-cube::before,
+.roblox-cube::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(226, 35, 26, 0.1);
+    border: 2px solid var(--roblox-red);
+    transform: rotateY(45deg) rotateX(45deg);
+}
+
+.roblox-cube::after {
+    transform: rotateY(-45deg) rotateX(-45deg);
+}
+
+@keyframes rotateCube {
+    0% { transform: rotate(0deg) translateY(-50%); }
+    100% { transform: rotate(360deg) translateY(-50%); }
+}
+
+/* Hero Content */
+.hero-text h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    text-shadow: 
+        0 0 10px rgba(226, 35, 26, 0.5),
+        2px 2px 0 var(--roblox-red);
+    animation: heroGlow 3s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+    0%, 100% { text-shadow: 0 0 10px rgba(226, 35, 26, 0.5), 2px 2px 0 var(--roblox-red); }
+    50% { text-shadow: 0 0 20px rgba(226, 35, 26, 0.8), 2px 2px 0 var(--roblox-red); }
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+    color: var(--roblox-light);
+    margin: 1rem 0;
+    animation: slideInFromRight 1s ease-out;
+}
+
+/* Roblox Buttons */
+.roblox-btn {
+    background: var(--roblox-red);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.roblox-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: all 0.5s ease;
+}
+
+.roblox-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(226, 35, 26, 0.3);
+}
+
+.roblox-btn:hover::before {
+    left: 100%;
+}
+
+.btn-secondary.roblox-btn {
+    background: transparent;
+    border: 2px solid var(--roblox-red);
+    color: var(--roblox-red);
+}
+
+.btn-secondary.roblox-btn:hover {
+    background: var(--roblox-red);
+    color: white;
+}
+
+/* Hero Badges */
+.hero-badges .badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--roblox-red);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+.hero-badges .badge:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.hero-badges .badge:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Hero Image Animation */
+.hero-image img {
+    animation: floatUpDown 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(226, 35, 26, 0.3));
+}
+
+@keyframes floatUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+.hero-description {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+ }
+
+/* Particles System */
+.roblox-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+/* Content Sections Styles */
+
+/* Feature Boxes */
+.roblox-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.roblox-box {
+    background: var(--roblox-dark);
+    border-radius: 8px;
+    padding: 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.roblox-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--roblox-red) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.roblox-box:hover {
+    transform: translateY(-10px);
+}
+
+.roblox-box:hover::before {
+    opacity: 0.1;
+}
+
+/* Learning Section */
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    perspective: 1000px;
+}
+
+.roblox-item {
+    background: var(--roblox-dark);
+    border-radius: 12px;
+    padding: 2rem;
+    color: white;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform-style: preserve-3d;
+}
+
+.roblox-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(226, 35, 26, 0.2) 0%,
+        transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.roblox-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--roblox-gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.roblox-item:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 
+        0 15px 30px rgba(226, 35, 26, 0.2),
+        0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.roblox-item:hover::before {
+    opacity: 1;
+}
+
+.roblox-item:hover::after {
+    transform: scaleX(1);
+}
+
+.item-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 0 10px rgba(226, 35, 26, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.roblox-item:hover .item-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.roblox-item h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.roblox-item p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Adăugăm efecte de particule pentru hover */
+.roblox-item .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.roblox-item:hover .particles::before,
+.roblox-item:hover .particles::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--roblox-red);
+    animation: particleFloat 2s ease-out infinite;
+    opacity: 0;
+}
+
+.roblox-item:hover .particles::before {
+    left: 20%;
+    animation-delay: 0.2s;
+}
+
+.roblox-item:hover .particles::after {
+    right: 20%;
+    animation-delay: 0.5s;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Adăugăm un border glow effect */
+.roblox-item::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: var(--roblox-gradient);
+    z-index: -1;
+    border-radius: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Adăugăm un efect de shine la hover */
+.roblox-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 100%
+    );
+    transition: left 0.6s ease;
+}
+
+.roblox-item:hover::after {
+    left: 100%;
+}
+
+/* Section Title Enhancement */
+.learning-section h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    color: white;
+    margin-bottom: 3rem;
+    position: relative;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.learning-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--roblox-gradient);
+}
+
+/* Skills Section */
+.roblox-skill {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.roblox-skill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 0%, rgba(226, 35, 26, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.roblox-skill:hover::before {
+    opacity: 1;
+}
+
+.skill-progress {
+    width: 100%;
+    height: 4px;
+    background: #f0f0f0;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--roblox-gradient);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.roblox-skill:hover .skill-progress::after {
+    transform: translateX(0);
+}
+
+/* Projects Section */
+.roblox-project {
+    background: var(--roblox-dark);
+    border-radius: 8px;
+    padding: 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.roblox-project::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(226, 35, 26, 0.2) 0%, transparent 50%);
+    transition: all 0.5s ease;
+}
+
+.roblox-project:hover::before {
+    top: -50%;
+    left: -50%;
+}
+
+.roblox-project:hover {
+    transform: translateY(-5px);
+}
+
+/* Section Titles */
+.roblox-gradient {
+    background: var(--roblox-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* CTA Section */
+.roblox-cta {
+    background: var(--roblox-gradient);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.roblox-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect fill="white" opacity="0.1" x="0" y="0" width="100" height="100"/></svg>');
+    background-size: 10px 10px;
+    animation: backgroundScroll 20s linear infinite;
+}
+
+@keyframes backgroundScroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .roblox-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+    
+    .roblox-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-badges {
+        flex-wrap: wrap;
+    }
+    
+    .roblox-btn {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}

@@ -1,0 +1,273 @@
+/* gdevelop.css - Stiluri specifice pentru pagina GDevelop */
+
+:root {
+    --gdevelop-primary: #7B61FF;      /* Violet pentru gaming */
+    --gdevelop-secondary: #00E5B0;    /* Turcoaz electric pentru tech */
+    --gdevelop-accent: #FF3C7B;       /* Roz neon pentru accente */
+    --gdevelop-dark: #1A1C2C;         /* Albastru închis pentru fundal */
+}
+
+/* Hero Section Override */
+.course-hero {
+    background: linear-gradient(135deg, var(--gdevelop-primary) 0%, var(--gdevelop-dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.course-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.1) 2px,
+        transparent 2px,
+        transparent 8px
+    );
+    pointer-events: none;
+}
+
+.hero-text h2 {
+    color: var(--gdevelop-secondary);
+    animation: neonPulse 2s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+    0%, 100% { 
+        text-shadow: 0 0 10px rgba(0, 229, 176, 0.5),
+                     0 0 20px rgba(0, 229, 176, 0.3);
+    }
+    50% { 
+        text-shadow: 0 0 20px rgba(0, 229, 176, 0.8),
+                     0 0 30px rgba(0, 229, 176, 0.5);
+    }
+}
+
+/* Feature Boxes Enhancement */
+.feature-box {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid transparent;
+    position: relative;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.feature-box::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--gdevelop-primary), var(--gdevelop-secondary));
+    z-index: -1;
+    border-radius: 14px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.feature-box:hover::after {
+    opacity: 1;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* Learning Section Styles */
+.learning-section {
+    background: linear-gradient(180deg, var(--white) 0%, #f8f9fa 100%);
+}
+
+.learning-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    border: 1px solid rgba(123, 97, 255, 0.1);
+}
+
+.learning-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(to bottom, var(--gdevelop-primary), var(--gdevelop-secondary));
+    transition: height 0.4s ease;
+}
+
+.learning-card:hover::before {
+    height: 100%;
+}
+
+.learning-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(123, 97, 255, 0.15);
+}
+
+.learning-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--gdevelop-primary);
+    transition: transform 0.3s ease;
+}
+
+.learning-card:hover .learning-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Skills Section Override */
+.skills-section {
+    background: var(--white);
+}
+
+.skill-card {
+    border: 1px solid rgba(123, 97, 255, 0.1);
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gdevelop-primary), var(--gdevelop-secondary));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.skill-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Projects Section Override */
+.project-card {
+    background: var(--white);
+    border-top: 4px solid var(--gdevelop-primary);
+}
+
+.project-card:hover {
+    border-top-color: var(--gdevelop-secondary);
+    transform: translateY(-5px) scale(1.02);
+}
+
+.project-icon {
+    color: var(--gdevelop-primary);
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+    color: var(--gdevelop-secondary);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.project-card ul li {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.project-card ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gdevelop-primary);
+}
+
+/* Why Us Section Enhancement */
+.why-us {
+    position: relative;
+    overflow: hidden;
+}
+
+.why-us::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(123, 97, 255, 0.05) 0%, rgba(0, 229, 176, 0.05) 100%);
+    transform: rotate(45deg);
+}
+
+.why-us h2 {
+    color: var(--gdevelop-primary);
+    position: relative;
+    display: inline-block;
+}
+
+/* CTA Section Override */
+.cta-section {
+    background: linear-gradient(135deg, var(--gdevelop-primary) 0%, var(--gdevelop-dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: var(--gdevelop-secondary);
+    color: var(--gdevelop-dark);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--gdevelop-accent);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Text Gradient Override */
+.text-gradient {
+    background: linear-gradient(90deg, var(--gdevelop-primary), var(--gdevelop-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Hero Image Animation */
+@keyframes blockFloat {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+.hero-image img {
+    animation: blockFloat 4s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(123, 97, 255, 0.3));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feature-box, .learning-card, .skill-card, .project-card {
+        transform: none !important;
+    }
+    
+    .hero-badges {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .learning-card, .skill-card {
+        padding: 1.5rem;
+    }
+    
+    .feature-box {
+        margin-bottom: 1rem;
+    }
+}

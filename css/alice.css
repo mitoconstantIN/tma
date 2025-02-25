@@ -1,0 +1,434 @@
+/* alice3.css - Stiluri specifice pentru pagina Alice3 */
+
+:root {
+    --alice-primary: #6B4FA0;     /* Violet Alice3 */
+    --alice-secondary: #9B6B9E;   /* Roz-violet secundar */
+    --alice-accent: #4ECDC4;      /* Turcoaz accent */
+    --alice-dark: #2C1810;        /* Maro închis */
+    --alice-light: #F7F0FF;       /* Violet foarte deschis */
+    --editor-bg: #1E1E2E;         /* Fundal închis pentru secțiuni cod */
+}
+
+/* Hero Section Customization */
+.alice3-hero {
+    background: linear-gradient(135deg, var(--alice-primary) 0%, var(--alice-dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero-particles::before,
+.hero-particles::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle, var(--alice-accent) 1px, transparent 1px),
+        radial-gradient(circle, var(--alice-secondary) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    animation: particleFloat 20s linear infinite;
+    opacity: 0.1;
+}
+
+@keyframes particleFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-40px); }
+}
+
+.hero-text h1 {
+    font-size: 4.5rem;
+    color: var(--alice-light);
+    text-shadow: 
+        0 0 20px rgba(107, 79, 160, 0.5),
+        2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+}
+
+.hero-text h2 {
+    color: var(--alice-accent);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 15px rgba(78, 205, 196, 0.5);
+}
+
+.hero-description {
+    color: var(--alice-light);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 3D World Preview Animation */
+.world-preview {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    perspective: 1000px;
+}
+
+.object3d {
+    width: 60px;
+    height: 60px;
+    background: rgba(155, 107, 158, 0.2);
+    border: 2px solid rgba(155, 107, 158, 0.3);
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotate3D 10s infinite linear;
+}
+
+.object3d:nth-child(1) { animation-delay: -2s; }
+.object3d:nth-child(2) { animation-delay: -4s; }
+.object3d:nth-child(3) { animation-delay: -6s; }
+
+@keyframes rotate3D {
+    0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+    100% { transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg); }
+}
+
+/* Feature Boxes */
+.alice3-box {
+    background: rgba(107, 79, 160, 0.1);
+    border: 1px solid rgba(107, 79, 160, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.alice3-box:hover {
+    transform: translateY(-5px);
+    background: rgba(107, 79, 160, 0.15);
+    box-shadow: 0 10px 30px rgba(107, 79, 160, 0.2);
+}
+
+.alice3-box .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.alice3-box .feature-icon::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(78, 205, 196, 0.2);
+    border-radius: 50%;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.alice3-box:hover .feature-icon::after {
+    transform: translate(-50%, -50%) scale(1.2);
+    background: rgba(78, 205, 196, 0.3);
+}
+
+/* Skills Section */
+.alice3-skill {
+    background: var(--alice-light);
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.alice3-skill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--alice-primary), var(--alice-accent));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.alice3-skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(107, 79, 160, 0.15);
+}
+
+.alice3-skill:hover::before {
+    opacity: 1;
+}
+
+.skill-progress {
+    height: 3px;
+    background: rgba(107, 79, 160, 0.1);
+    margin-top: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--alice-primary), var(--alice-accent));
+    transition: width 0.6s ease;
+}
+
+.alice3-skill:hover .skill-progress::after {
+    width: 100%;
+}
+
+/* Project Cards */
+.alice3-project {
+    background: rgba(107, 79, 160, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.alice3-project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--alice-accent);
+    transition: height 0.3s ease;
+}
+
+.alice3-project:hover {
+    transform: translateY(-5px);
+    background: rgba(107, 79, 160, 0.15);
+    box-shadow: 0 10px 30px rgba(107, 79, 160, 0.2);
+}
+
+.alice3-project:hover::before {
+    height: 100%;
+}
+
+/* Buttons */
+.alice3-btn {
+    background: var(--alice-primary);
+    color: var(--alice-light);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.alice3-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.4) 0%, transparent 60%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+
+.alice3-btn:hover {
+    background: var(--alice-secondary);
+    transform: translateY(-2px);
+}
+
+.alice3-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Program Section Styles */
+.program-section {
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.program-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.age-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 1.5rem 0;
+}
+
+.age-group {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(155, 107, 158, 0.2);
+}
+
+.age-group:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.age-header {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.age-range {
+    display: inline-block;
+    background: var(--alice-accent);
+    color: var(--alice-dark);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.age-header h3 {
+    color: var(--alice-light);
+    font-size: 1.8rem;
+    margin: 0.8rem 0;
+}
+
+.age-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.age-features li {
+    color: rgba(247, 240, 255, 0.9);
+    padding: 0.5rem 0 0.5rem 1rem;
+    position: relative;
+    border-bottom: 1px solid rgba(155, 107, 158, 0.1);
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.age-features li:last-child {
+    border-bottom: none;
+}
+
+.age-features li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--alice-accent);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .program-section {
+        padding: 3rem 1rem;
+    }
+
+    .age-groups {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .age-group {
+        padding: 2rem;
+    }
+
+    .age-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .age-features li {
+        font-size: 1rem;
+        padding: 0.8rem 0 0.8rem 1.5rem;
+    }
+}
+
+/* Section Backgrounds */
+.alice3-dark {
+    background: var(--editor-bg);
+    color: var(--alice-light);
+}
+
+.alice3-light {
+    background: var(--alice-light);
+    color: var(--alice-dark);
+}
+
+.alice3-gradient {
+    background: linear-gradient(90deg, var(--alice-primary), var(--alice-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+    
+    .world-preview {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .alice3-box {
+        padding: 1.5rem;
+    }
+    
+    .alice3-project {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .alice3-btn {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+}

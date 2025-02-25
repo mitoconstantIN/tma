@@ -1,0 +1,253 @@
+/* scratch.css - Stiluri specifice pentru pagina Scratch */
+
+:root {
+    --scratch-primary: #4D97FF;     /* Albastrul Scratch */
+    --scratch-secondary: #25D0AB;   /* Verde-turcoaz Scratch */
+    --scratch-accent: #FF8C1A;      /* Portocaliu Scratch */
+}
+
+/* Hero Section Customization */
+.course-hero {
+    background: linear-gradient(135deg, var(--scratch-primary) 0%, #2E5A9C 100%);
+}
+
+.hero-text h2 {
+    color: var(--scratch-secondary);
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px rgba(37, 208, 171, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(37, 208, 171, 0.8); }
+}
+
+/* Age Groups Section - Specific pentru Scratch */
+.age-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.age-group {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.age-group:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.age-group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--scratch-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.age-group:hover::before {
+    opacity: 1;
+}
+
+.age-header {
+    margin-bottom: 1.5rem;
+}
+
+.age-range {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--scratch-primary);
+    color: var(--white);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.age-features {
+    list-style: none;
+    padding: 0;
+}
+
+.age-features li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.age-features li::before {
+    content: '→';
+    color: var(--scratch-primary);
+    position: absolute;
+    left: 0;
+}
+
+/* Feature Boxes Customization */
+.feature-box {
+    border: 1px solid rgba(77, 151, 255, 0.1);
+}
+
+.feature-box .feature-icon {
+    position: relative;
+    z-index: 1;
+}
+
+.feature-box .feature-icon::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(77, 151, 255, 0.1);
+    border-radius: 50%;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.feature-box:hover .feature-icon::after {
+    transform: translate(-50%, -50%) scale(1.2);
+    background: rgba(37, 208, 171, 0.1);
+}
+
+/* Skill Cards Customization */
+.skill-card::before {
+    background: linear-gradient(90deg, var(--scratch-primary), var(--scratch-secondary));
+}
+
+
+/* Skill Cards Animation */
+.skill-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--scratch-primary), var(--scratch-secondary));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-progress {
+    transform: scaleX(1);
+}
+
+/* Îmbunătățire animație la hover */
+.skill-card {
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.skill-card .skill-icon {
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1);
+}
+
+/* Project Cards Customization */
+.project-card {
+    border-top: 4px solid var(--scratch-primary);
+}
+
+.project-card:hover {
+    border-top-color: var(--scratch-secondary);
+}
+
+/* Why Us Section Customization */
+.why-us {
+    position: relative;
+    overflow: hidden;
+}
+
+.why-us::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: rgba(77, 151, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+}
+
+.why-us h2 {
+    color: var(--scratch-primary);
+    position: relative;
+    display: inline-block;
+}
+
+.why-us h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background: var(--scratch-secondary);
+}
+
+/* Buttons Customization */
+.btn-primary {
+    background: var(--scratch-secondary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--scratch-accent);
+}
+
+/* Animation for Scratch Elements */
+@keyframes blockFloat {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+.hero-image img {
+    animation: blockFloat 4s ease-in-out infinite;
+}
+
+/* Particle Effects */
+.particle {
+    position: absolute;
+    background: var(--scratch-secondary);
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .age-groups {
+        grid-template-columns: 1fr;
+    }
+    
+    .why-us::before {
+        width: 100px;
+        height: 100px;
+    }
+}

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMA - Despre noi</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/animations.css">
+    <style>
+        .cta-container {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+.curricula-button {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0066cc, #0052a3);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.2);
+}
+
+.curricula-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.1);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.curricula-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.3);
+}
+
+.curricula-button:hover::after {
+    left: 100%;
+}
+
+@media (max-width: 768px) {
+    .cta-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .curricula-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+        /* Stiluri de bază și layout */
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-section {
+    margin: 4rem 0;
+    background-color: white;
+    padding: 4rem 2rem;
+}
+
+.about-section.dark {
+    background-color: #f8f9fa;
+}
+
+/* Titluri și text */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.section-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* Grid și coloane */
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+/* Butoane și CTA */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #FFD700;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #FFC700;
+    transform: translateY(-2px);
+}
+
+/* Animații */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Trainer Cards */
+.trainers-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.trainer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.trainer-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.trainer-image {
+    object-position: top center;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.5s ease;
+}
+
+.trainer-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 1rem 0 0.5rem;
+    color: #333;
+}
+
+.trainer-specialization {
+    color: #0066cc;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+.trainer-bio {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Program Schedule */
+.program-schedule {
+    margin-top: 2rem;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.schedule-item:before {
+    content: "🕐";
+    margin-right: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .two-columns {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .trainer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trainer-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .trainer-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-bottom: 0;
+    }
+
+    .trainer-content {
+        flex: 1;
+    }
+}
+
+
+.trainers-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.trainer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.trainer-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Animație diferită pentru fiecare card */
+.trainer-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.trainer-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+.trainer-card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.trainer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 102, 204, 0.2);
+}
+
+.trainer-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.2), transparent 70%);
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.trainer-card:hover::after {
+    transform: translateX(100%);
+}
+
+.trainer-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.5s ease;
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+.trainer-card:hover .trainer-image {
+    transform: scale(1.05);
+}
+
+.trainer-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 1rem 0 0.5rem;
+    color: #333;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.trainer-name::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #0066cc;
+    transition: width 0.3s ease;
+}
+
+.trainer-card:hover .trainer-name::after {
+    width: 50px;
+}
+
+.trainer-specialization {
+    color: #0066cc;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.trainer-card:hover .trainer-specialization {
+    opacity: 1;
+}
+
+.trainer-bio {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .trainer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .trainer-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .trainer-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-bottom: 0;
+    }
+
+    .trainer-content {
+        flex: 1;
+    }
+
+    .trainer-name {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .trainer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .trainer-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .trainer-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-bottom: 0;
+    }
+
+    .trainer-content {
+        flex: 1;
+    }
+
+    .trainer-name {
+        margin-top: 0;
+    }
+}
+.cta-button-primary {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0066cc, #0052a3);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.2);
+}
+
+.cta-button-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.1);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.cta-button-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 102, 204, 0.3);
+}
+
+.cta-button-primary:hover::after {
+    left: 100%;
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <img src="./assets/images/logo-techminds-sigla.png alt="TMA Logo">
+            </a>  
+            <button class="menu-button">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Acasă</a></li>
+                <li class="dropdown">
+                    <a href="index.html">Programare</a>
+                    <div class="dropdown-content">
+                        <a href="courses/scratch.html">Scratch</a>
+                        <a href="courses/thunkable.html">Thunkable</a>
+                        <a href="courses/gdevelop.html">GDevelop</a>
+                        <a href="courses/minecraft.html">Minecraft</a>
+                        <a href="courses/roblox.html">Roblox</a>
+                        <a href="courses/godot.html">Godot</a>
+                        <a href="courses/greenfoot.html">Greenfoot</a>
+                        <a href="courses/python.html">Python</a>
+                        <a href="courses/frontend.html">Frontend</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="robotics.html">Robotică</a>
+                    <div class="dropdown-content">
+                        <a href="courses/essentials.html">LEGO Essentials</a>
+                        <a href="courses/prime.html">LEGO Prime</a>
+                        <a href="courses/microbit.html">micro:bit</a>
+                        <a href="courses/arduino.html">Arduino</a>
+                    </div>
+                </li>
+                <li><a href="about.html">Despre noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="about-hero">
+        <div class="about-content">
+            <h1>Inovație în Educația Tech</h1>
+            <p>Formăm viitorul programării prin metode moderne de învățare</p>
+        </div>
+    </div>
+
+    <div class="about-content">
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="section-container fade-in">
+                <h1 class="section-title" style="color: #2E5A9C">Despre noi</h1>
+                <p class="section-content">
+                    TechMinds Academy: locul unde imaginația se întâlnește cu tehnologia pentru a da naștere unor proiecte inovatoare!
+                </p>
+                <p class="section-content">
+                    Pasiunea noastră pentru tehnologie și dorința de a oferi copiilor o educație orientată spre viitor ne-au motivat să creăm TechMinds Academy - un spațiu unde copiii pot explora, experimenta și învăța prin practică.
+                </p>
+    
+                <!-- CTA Buttons -->
+                <div class="cta-container">
+                    <a href="/index.html" class="curricula-button">
+                        Curricula Programare →
+                    </a>
+                    <a href="/robotics.html" class="curricula-button">
+                        Curricula Robotica →
+                    </a>
+                </div>
+    
+                <!-- Main content paragraphs -->
+                <div class="content-section fade-in">
+                    <p class="section-content">
+                        La TechMinds Academy, nu ne limităm doar la predarea unor simple noțiuni tehnice. Ne dorim să formăm tineri capabili să gândească critic, să rezolve probleme complexe și să utilizeze tehnologia pentru a aduce o schimbare pozitivă în lume.
+                    </p>
+                    <p class="section-content">
+                        Prin proiecte practice, elevii au ocazia să aplice cunoștințele dobândite într-un context real, fiind încurajați să participe la competiții locale și internaționale de robotică și programare.
+                    </p>
+                </div>
+    
+                <!-- Trainers Section -->
+                <div class="trainers-container">
+                    <div class="trainer-grid">
+                        <div class="trainer-card">
+                            <img src="assets/images/gigi.jpg" alt="Gheorghe Bardan" class="trainer-image">
+                            <div class="trainer-content">
+                                <h3 class="trainer-name">Gheorghe Bardan</h3>
+                                <div class="trainer-specialization">Robotica, Web Development</div>
+                                <p class="trainer-bio">Sunt un profesor pasionat de tehnologie, cu peste 3 ani de experiență în predarea programării și roboticii pentru copii și tineri.</p>
+                            </div>
+                        </div>
+                
+                        <div class="trainer-card">
+                            <img src="assets/images/costi.jpg" alt="Constantin Mitocaru" class="trainer-image">
+                            <div class="trainer-content">
+                                <h3 class="trainer-name">Constantin Mitocaru</h3>
+                                <div class="trainer-specialization">Programare, Robotica</div>
+                                <p class="trainer-bio">Cu o vastă experiență în predare și pasiune pentru tehnologie, sunt dedicat să inspir următoarea generație de programatori.</p>
+                            </div>
+                        </div>
+                
+                        <div class="trainer-card">
+                            <img src="assets/images/vlad.png" alt="Vlad Dumitru" class="trainer-image">
+                            <div class="trainer-content">
+                                <h3 class="trainer-name">Vlad Dumitru</h3>
+                                <div class="trainer-specialization">Game Development, Programare, Robotica</div>
+                                <p class="trainer-bio">Îmi dedic timpul lucrului cu copii și adolescenți, ghidându-i să descopere lumea fascinantă a codului.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Mission and Values Section -->
+<section class="about-section dark">
+    <div class="section-container">
+        <div class="two-columns">
+            <div class="slide-in-left">
+                <h2 class="section-title">Misiunea noastră</h2>
+                <p class="section-content" style="font-size: 1.3rem;">
+                    La TechMinds Academy, misiunea noastră este să cultivăm potențialul inovator al fiecărui copil, oferindu-le instrumentele și cunoștințele necesare pentru a naviga cu succes într-o lume digitală în continuă schimbare. De aceea, am creat un mediu de învățare interactiv, unde teoria se îmbină perfect cu practica.
+                </p>
+                <p class="section-content" style="font-size: 1.3rem;">
+                    Programele noastre, adaptate vârstei și intereselor fiecăruia dintre cursanți, îi încurajează să exploreze, să experimenteze și să își dezvolte gândirea critică. Prin proiecte captivante și activități hands-on, transformăm învățarea tehnologiei într-o aventură care stârnește curiozitatea și pasiunea pentru descoperire.
+                </p>
+            </div>
+            <div class="slide-in-right">
+                <h2 class="section-title">Valorile noastre</h2>
+                <ul class="section-content stagger-fade-in" style="font-size: 1.3rem; padding-left: 20px;">
+                    <li>Inovație: Promovăm gândirea inovatoare și explorarea noilor tehnologii.</li>
+                    <li>Creativitate: Încurajăm exprimarea liberă a ideilor și dezvoltarea proiectelor personale.</li>
+                    <li>Colaborare: Cultivăm spiritul de echipă și abilitățile de comunicare.</li>
+                    <li>Excelență: Ne angajăm să oferim o educație de cea mai înaltă calitate.</li>
+                    <li>Reziliență: Învățăm copiii să depășească obstacolele și să învețe din greșeli.</li>
+                    <li>Impact Pozitiv: Încurajăm utilizarea tehnologiei pentru a aduce o contribuție pozitivă în comunitate.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="carousel-section">
+    <h2 class="section-title">Investește în educație</h2>
+    <p class="section-content">
+      Investiția în educația tehnologică este o decizie pe termen lung care îi va oferi copilului tău oportunități nelimitate și șansa de a-și dezvolta potențialul într-un mediu stimulativ și profesionist.
+    </p>
+    <a href="/inscriere" class="cta-button-primary">Înscrie-te chiar acum →</a>
+  
+    <div class="carousel-container">
+      <button class="carousel-button prev-button">←</button>
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <a href="courses/scratch.html">
+            <img src="assets/images/scratch.webp" alt="Programare Scratch">
+            <div class="course-title">Scratch</div>
+          </a>
+        </div>
+        <div class="carousel-slide">
+          <a href="courses/python.html">
+            <img src="assets/images/pyton.webp" alt="Programare Python">
+            <div class="course-title">Python</div>
+          </a>
+        </div>
+        <div class="carousel-slide">
+          <a href="courses/thunkable.html">
+            <img src="assets/images/thunkable.png" alt="Dezvoltare Thunkable">
+            <div class="course-title">Thunkable</div>
+          </a>
+        </div>
+        <div class="carousel-slide">
+          <a href="courses/gdevelop.html">
+            <img src="assets/images/gdevelop.png" alt="Game Development cu GDevelop">
+            <div class="course-title">GDevelop</div>
+          </a>
+        </div>
+        <div class="carousel-slide">
+          <a href="courses/minecraft.html">
+            <img src="assets/images/minecraft.png" alt="Programare Minecraft">
+            <div class="course-title">Minecraft</div>
+          </a>
+        </div>
+        <div class="carousel-slide">
+          <a href="courses/roblox.html">
+            <img src="assets/images/roblox.png" alt="Dezvoltare Roblox">
+            <div class="course-title">Roblox</div>
+          </a>
+        </div>
+        <div class="carousel-slide">
+          <a href="courses/godot.html">
+            <img src="assets/images/godot.webp" alt="Game Development cu Godot">
+            <div class="course-title">Godot</div>
+          </a>
+        </div>
+        <div class="carousel-slide">
+          <a href="courses/greenfoot.html">
+            <img src="assets/images/greenfoot.png" alt="Programare Greenfoot">
+            <div class="course-title">Greenfoot</div>
+          </a>
+        </div>
+        <div class="carousel-slide">
+          <a href="courses/frontend.html">
+            <img src="assets/images/frontend.webp" alt="Web Development">
+            <div class="course-title">Frontend</div>
+          </a>
+        </div>
+      </div>
+      <button class="carousel-button next-button">→</button>
+    </div>
+  </section>
+
+
+<!-- Schedule and Costs Section -->
+<section class="about-section dark">
+    <div class="section-container">
+        <div class="two-columns">
+            <div>
+                <h2 class="section-title">Program</h2>
+                <p class="section-content">
+                    Ședințele au o durata de 90 de minute si 15 minute pauza.
+                </p>
+                <div class="program-schedule">
+                    <div class="schedule-item" style="font-size: 1.3rem;">10:00-12:00</div>
+                    <div class="schedule-item" style="font-size: 1.3rem;">12:00-14:00</div>
+                    <div class="schedule-item" style="font-size: 1.3rem;">14:00-16:00</div>
+                    <div class="schedule-item" style="font-size: 1.3rem;">16:00-18:00</div>
+                </div>
+            </div>
+            <div>
+                <h2 class="section-title">Costuri</h2>
+                <div class="section-content">
+                    <p>Costul pentru un curs va fi de 160 lei/ședință</p>
+                    <p>Pentru primele 3 luni se ofera un preț promoțional de 125 lei/ședință</p>
+                    <p>Pentru orice înscriere realizată până la data de 1 martie, se va beneficia de o reducere suplimentară de 10%</p>
+                </div>
+                
+                <a href="/inscriere" class="cta-button-primary">Înscrie-te chiar acum →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div><!-- Închidere pentru .about-content -->
+
+<!-- Footer -->
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+                <li>Email: contact@tma.ro</li>
+                <li>Telefon: 0700 000 000</li>
+                <li>Adresă: Strada Exemplu, Nr. 123</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Cursuri populare</h3>
+            <ul>
+                <li><a href="/courses/scratch.html">Scratch</a></li>
+                <li><a href="/courses/python.html">Python</a></li>
+                <li><a href="/courses/minecraft.html">Minecraft</a></li>
+                <li><a href="/courses/roblox.html">Roblox</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Cursuri avansate</h3>
+            <ul>
+                <li><a href="/courses/godot.html">Godot</a></li>
+                <li><a href="/courses/frontend.html">Frontend</a></li>
+                <li><a href="/courses/greenfoot.html">Greenfoot</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Informații</h3>
+            <ul>
+                <li><a href="/about.html">Despre noi</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/terms.html">Termeni și condiții</a></li>
+                <li><a href="/privacy.html">Confidențialitate</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 TMA. Toate drepturile rezervate.</p>
+    </div>
+</footer>
+
+
+<!-- Scripts -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mobile menu
+        const menuButton = document.querySelector('.menu-button');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar')) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Animation triggers
+        const sections = document.querySelectorAll('.section-container');
+        sections.forEach((section, index) => {
+            section.classList.add(`delay-${index + 1}`);
+        });
+    });
+</script>
+<script src="js/carousel.js"></script>
+<script src="js/animations.js"></script>
+
+</body>
+</html>

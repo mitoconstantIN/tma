@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMA - TITLE_PLACEHOLDER</title>
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/courses.css">
+    <!-- Page specific CSS - CSS_PLACEHOLDER -->
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-content">
+        <a href="../index.html" class="logo">
+            <img src="../assets/images/logo-techminds-sigla.png" alt="TMA Logo">
+        </a>  
+        <button class="menu-button">☰</button>
+        <ul class="nav-links">
+            <li><a href="../index.html">Acasă</a></li>
+            <li class="dropdown">
+                <a href="../programare.html">Programare</a>
+                <div class="dropdown-content">
+                    <a href="scratch.html">Scratch</a>
+                    <a href="thunkable.html">Thunkable</a>
+                    <a href="gdevelop.html">GDevelop</a>
+                    <a href="minecraft.html">Minecraft</a>
+                    <a href="roblox.html">Roblox</a>
+                    <a href="godot.html">Godot</a>
+                    <a href="greenfoot.html">Greenfoot</a>
+                    <a href="python.html">Python</a>
+                    <a href="frontend.html">Frontend</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="../robotics.html">Robotică</a>
+                <div class="dropdown-content">
+                    <a href="essentials.html">LEGO Essentials</a>
+                    <a href="prime.html">LEGO Prime</a>
+                    <a href="microbit.html">micro:bit</a>
+                    <a href="arduino.html">Arduino</a>
+                </div>
+                <li><a href="../about.html">Despre noi</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- CONTENT_PLACEHOLDER -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: contact@tma.ro</li>
+                    <li>Telefon: 0700 000 000</li>
+                    <li>Adresă: Strada Exemplu, Nr. 123</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Cursuri populare</h3>
+                <ul>
+                    <li><a href="/courses/scratch.html">Scratch</a></li>
+                    <li><a href="/courses/python.html">Python</a></li>
+                    <li><a href="/courses/minecraft.html">Minecraft</a></li>
+                    <li><a href="/courses/roblox.html">Roblox</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Cursuri avansate</h3>
+                <ul>
+                    <li><a href="/courses/godot.html">Godot</a></li>
+                    <li><a href="/courses/frontend.html">Frontend</a></li>
+                    <li><a href="/courses/greenfoot.html">Greenfoot</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Informații</h3>
+                <ul>
+                    <li><a href="/about.html">Despre noi</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/terms.html">Termeni și condiții</a></li>
+                    <li><a href="/privacy.html">Confidențialitate</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TMA. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.querySelector('.menu-button');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+
+<script src="/js/courses.js"></script>
+
+</body>
+</html>

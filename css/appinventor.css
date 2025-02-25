@@ -1,0 +1,186 @@
+/* thunkable.css - Stiluri specifice pentru pagina Thunkable */
+
+:root {
+    --thunkable-primary: #FF6B6B;      /* Roșu-coral pentru energie și creativitate */
+    --thunkable-secondary: #4ECDC4;    /* Turcoaz pentru tehnologie și inovație */
+    --thunkable-accent: #45B7D1;       /* Albastru deschis pentru mobile */
+    --thunkable-dark: #2C3E50;         /* Albastru închis pentru text și accente */
+}
+
+/* Hero Section Override */
+.course-hero {
+    background: linear-gradient(135deg, var(--thunkable-primary) 0%, var(--thunkable-dark) 100%);
+}
+
+.hero-text h2 {
+    color: var(--thunkable-secondary);
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Animation for Hero Image */
+@keyframes blockFloat {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+.hero-image img {
+    animation: blockFloat 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px rgba(78, 205, 196, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(78, 205, 196, 0.8); }
+}
+
+/* Feature Boxes Enhancement */
+.feature-box {
+    border: 1px solid rgba(78, 205, 196, 0.1);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.feature-box:hover {
+    border-color: var(--thunkable-secondary);
+}
+
+.feature-box .feature-icon {
+    color: var(--thunkable-primary);
+    position: relative;
+}
+
+/* Learning Section Styles */
+.learning-section {
+    background: var(--white);
+    padding: 6rem 0;
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.learning-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.learning-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    border-left-color: var(--thunkable-primary);
+}
+
+.learning-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--thunkable-primary);
+}
+
+.learning-card h3 {
+    color: var(--thunkable-dark);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.learning-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Skills Section Override */
+.skills-section {
+    background: linear-gradient(180deg, var(--white) 0%, #f8f9fa 100%);
+}
+
+.skill-card {
+    border: 1px solid rgba(78, 205, 196, 0.1);
+}
+
+.skill-card::after {
+    background: linear-gradient(90deg, var(--thunkable-primary), var(--thunkable-secondary));
+}
+
+.skill-card .skill-icon {
+    color: var(--thunkable-primary);
+}
+
+/* Projects Section Override */
+.project-card {
+    border-top: 4px solid var(--thunkable-primary);
+}
+
+.project-card:hover {
+    border-top-color: var(--thunkable-secondary);
+}
+
+.project-card .project-icon {
+    color: var(--thunkable-primary);
+}
+
+/* Why Us Section Enhancement */
+.why-us {
+    position: relative;
+    overflow: hidden;
+}
+
+.why-us::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.05) 0%, transparent 70%);
+    transform: rotate(45deg);
+}
+
+/* CTA Section Override */
+.cta-section {
+    background: linear-gradient(135deg, var(--thunkable-primary) 0%, var(--thunkable-dark) 100%);
+}
+
+.btn-primary {
+    background: var(--thunkable-secondary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--thunkable-accent);
+    transform: translateY(-2px);
+}
+
+/* Text Gradient Override */
+.text-gradient {
+    background: linear-gradient(90deg, var(--thunkable-primary), var(--thunkable-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .learning-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-badges {
+        flex-wrap: wrap;
+    }
+    
+    .learning-card {
+        padding: 1.25rem;
+    }
+}

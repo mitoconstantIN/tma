@@ -1,0 +1,445 @@
+/* godot.css - Stiluri pentru pagina Godot */
+
+:root {
+    --godot-blue: #478CBF;
+    --godot-light-blue: #69A7D7;
+    --godot-dark-blue: #2D587B;
+    --godot-accent: #37D4A7;
+    --godot-dark: #1A1F2B;
+    --godot-light: #F0F1F2;
+    --godot-code: #2D3340;
+    --godot-gradient: linear-gradient(135deg, var(--godot-blue) 0%, var(--godot-accent) 100%);
+}
+
+/* Hero Section */
+.godot-hero {
+    background: var(--godot-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Terminal Effect Background */
+.godot-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(180deg, 
+            rgba(71, 140, 191, 0.1) 0%,
+            transparent 100%
+        );
+    opacity: 0.5;
+}
+
+/* Code Overlay Effect */
+.code-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        transparent 0px,
+        transparent 24px,
+        rgba(71, 140, 191, 0.1) 24px,
+        rgba(71, 140, 191, 0.1) 25px
+    );
+    pointer-events: none;
+    animation: scrollCode 50s linear infinite;
+}
+
+@keyframes scrollCode {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); }
+}
+
+/* Hero Text Styling */
+.hero-text h1 {
+    font-size: 4.5rem;
+    color: var(--godot-blue);
+    font-weight: 800;
+    text-shadow: 
+        0 0 10px rgba(71, 140, 191, 0.5),
+        2px 2px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: glowText 3s ease-in-out infinite;
+}
+
+@keyframes glowText {
+    0%, 100% { text-shadow: 0 0 10px rgba(71, 140, 191, 0.5), 2px 2px 0 rgba(0, 0, 0, 0.3); }
+    50% { text-shadow: 0 0 20px rgba(71, 140, 191, 0.8), 2px 2px 0 rgba(0, 0, 0, 0.3); }
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+    color: var(--godot-accent);
+    margin: 1rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Badges */
+.hero-badges .badge {
+    background: rgba(71, 140, 191, 0.1);
+    border: 1px solid var(--godot-blue);
+    color: var(--godot-light);
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+.hero-badges .badge:nth-child(2) { animation-delay: 0.3s; }
+.hero-badges .badge:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); border-color: var(--godot-blue); }
+    50% { transform: scale(1.05); border-color: var(--godot-accent); }
+}
+
+/* Godot Buttons */
+.godot-btn {
+    background: var(--godot-blue);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.godot-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: all 0.5s ease;
+}
+
+.godot-btn:hover {
+    transform: translateY(-3px);
+    background: var(--godot-light-blue);
+    box-shadow: 0 5px 15px rgba(71, 140, 191, 0.3);
+}
+
+.godot-btn:hover::before {
+    left: 100%;
+}
+
+.btn-secondary.godot-btn {
+    background: transparent;
+    border: 2px solid var(--godot-blue);
+    color: var(--godot-blue);
+}
+
+.btn-secondary.godot-btn:hover {
+    background: var(--godot-blue);
+    color: white;
+}
+
+/* Hero Image Animation */
+.hero-image {
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-image img {
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 0 20px rgba(71, 140, 191, 0.3));
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+/* Node Connection Effect */
+.node-connection {
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: var(--godot-blue);
+    opacity: 0.3;
+}
+
+.node-connection::before,
+.node-connection::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--godot-accent);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.node-connection::before { top: 0; }
+.node-connection::after { bottom: 0; }
+
+/* Terminal Text Effect */
+@keyframes typeText {
+    from { width: 0; }
+    to { width: 100%; }
+}
+/* Content Sections */
+
+/* Feature Boxes */
+.godot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.godot-box {
+    background: var(--godot-code);
+    border-radius: 8px;
+    padding: 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(71, 140, 191, 0.1);
+}
+
+.godot-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(71, 140, 191, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.godot-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--godot-blue);
+}
+
+.godot-box:hover::before {
+    opacity: 1;
+}
+
+/* Learning Items */
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.godot-item {
+    background: var(--godot-dark);
+    border-radius: 8px;
+    padding: 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(71, 140, 191, 0.1);
+}
+
+.godot-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--godot-gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.godot-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.godot-item:hover::before {
+    transform: scaleX(1);
+}
+
+.item-icon {
+    font-size: 2rem;
+    color: var(--godot-blue);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.godot-item:hover .item-icon {
+    transform: scale(1.2);
+    color: var(--godot-accent);
+}
+
+/* Skills Section */
+.godot-skill {
+    background: var(--godot-code);
+    border-radius: 8px;
+    padding: 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.skill-progress {
+    position: relative;
+    height: 4px;
+    background: rgba(71, 140, 191, 0.1);
+    margin-top: 1rem;
+    overflow: hidden;
+}
+.hero-description {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+ }
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--godot-gradient);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.godot-skill:hover .skill-progress::after {
+    transform: translateX(0);
+}
+
+/* Projects Section */
+.godot-project {
+    background: var(--godot-code);
+    border-radius: 8px;
+    padding: 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.godot-project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 0%, rgba(71, 140, 191, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.godot-project:hover {
+    transform: translateY(-5px);
+}
+
+.godot-project:hover::before {
+    opacity: 1;
+}
+
+/* Section Backgrounds */
+.godot-dark {
+    background: var(--godot-dark);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.godot-light {
+    background: var(--godot-light);
+    color: var(--godot-dark);
+}
+
+.godot-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* CTA Section */
+.godot-cta {
+    background: linear-gradient(135deg, var(--godot-dark-blue) 0%, var(--godot-code) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.godot-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent 0,
+        transparent 10px,
+        rgba(71, 140, 191, 0.1) 10px,
+        rgba(71, 140, 191, 0.1) 20px
+    );
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .godot-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+    
+    .godot-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .godot-btn {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}

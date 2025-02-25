@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politica de Confidențialitate</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Fundal gradient */
+        body {
+            background: linear-gradient(to bottom, #234291, #3857D6);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 20px;
+            background: white;
+            color: #234291;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1, h2 {
+            color: #234291;
+            text-align: center;
+        }
+
+        h2 {
+            border-bottom: 2px solid #3857D6;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        p, ul {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        /* Secțiuni animate */
+        .section {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .section.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Linkuri */
+        a {
+            color: #3857D6;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #234291;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <img src="./assets/images/logo-techminds-sigla.png" alt="TMA Logo">
+            </a>  
+            <ul class="nav-links">
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="programare.html">Cursuri</a></li>
+                <li><a href="robotics.html">Robotică</a></li>
+                <li><a href="about.html">Despre noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="gdpr.html" class="active">Politica de confidențialitate</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Container Politica GDPR -->
+    <div class="container">
+        <h1>Politica de Confidențialitate</h1>
+        <p>Aflați cum colectăm, utilizăm și protejăm datele dvs.</p>
+
+        <div class="section">
+            <h2>1. Introducere</h2>
+            <p>Respectăm confidențialitatea utilizatorilor noștri și ne angajăm să protejăm datele personale.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. Ce date colectăm?</h2>
+            <p>Colectăm următoarele informații prin intermediul formularului de contact:</p>
+            <ul>
+                <li>Nume complet</li>
+                <li>Adresă de email</li>
+                <li>Mesajul transmis</li>
+                <li>Opțional: Cursul selectat</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>3. Cum folosim datele?</h2>
+            <p>Folosim datele pentru:</p>
+            <ul>
+                <li>Răspuns la solicitări și întrebări</li>
+                <li>Îmbunătățirea serviciilor noastre</li>
+                <li>Contactarea utilizatorilor în scop informativ</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. Cu cine partajăm datele?</h2>
+            <p>Nu vindem și nu distribuim datele dvs. către terți. Datele sunt folosite doar pentru scopurile menționate mai sus.</p>
+        </div>
+
+        <div class="section">
+            <h2>5. Drepturile utilizatorilor</h2>
+            <p>Conform GDPR, aveți următoarele drepturi:</p>
+            <ul>
+                <li>Dreptul de acces la datele dvs.</li>
+                <li>Dreptul de rectificare a datelor incorecte</li>
+                <li>Dreptul de ștergere a datelor ("dreptul de a fi uitat")</li>
+                <li>Dreptul de restricționare a prelucrării</li>
+                <li>Dreptul la portabilitatea datelor</li>
+                <li>Dreptul de a depune o plângere la autoritățile competente</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>6. Securitatea datelor</h2>
+            <p>Implementăm măsuri tehnice și organizatorice pentru protejarea datelor personale.</p>
+        </div>
+
+        <div class="section">
+            <h2>7. Contact</h2>
+            <p>Pentru întrebări legate de această politică, ne puteți contacta la:</p>
+            <p><strong>Email:</strong> inscrieri@techminds-academy.ro</p>
+            <p><strong>Telefon:</strong> +40 758 707 448</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 TechMinds Academy. Toate drepturile rezervate.</p>
+    </footer>
+
+    <!-- Script pentru animații -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Efect de fade-in pe container
+            document.querySelector(".container").classList.add("show");
+
+            // Efect de apariție pe secțiuni când dai scroll
+            const sections = document.querySelectorAll(".section");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>

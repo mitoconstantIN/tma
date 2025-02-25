@@ -1,0 +1,263 @@
+[33mcommit 83f998417f55dd7ba92a722e05c3944f5f23675c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mgigi[m[33m, [m[1;31morigin/feature/costi[m[33m)[m
+Author: mitoconstantIN <constantinmitocaru22@gmail.com>
+Date:   Mon Feb 24 10:25:13 2025 +0200
+
+    Added about.html
+
+[33mcommit 4ae334bd41e9b7cdd63994025e30f0bb23faa612[m
+Merge: 0f85252 ef5a5eb
+Author: mitoconstantIN <constantinmitocaru22@gmail.com>
+Date:   Mon Feb 24 10:11:01 2025 +0200
+
+    Merge branch 'main' of github.com:gigibardan/TMA into feature/costi
+
+[33mcommit 0f852528f624231d324fbf049370ca8c4f019eb6[m
+Author: mitoconstantIN <constantinmitocaru22@gmail.com>
+Date:   Mon Feb 24 10:09:58 2025 +0200
+
+    Modify contact.html, deleted about.html
+
+[33mcommit 0f5a27937545b0ec18103ddfa8aa74b07f6f547c[m
+Author: mitoconstantIN <constantinmitocaru22@gmail.com>
+Date:   Sun Feb 23 23:57:53 2025 +0200
+
+    Contact + gdpr.html
+
+[33mcommit ef5a5eb50ca1f6b31e61b3d8bab7ef38c5e304e6[m
+Author: kevinvlad03 <vlad.dumitru1006@stud.fils.upb.ro>
+Date:   Sun Feb 23 20:11:28 2025 +0200
+
+    Fixes
+
+[33mcommit b93625bc278df6c241aac862c2b368a80e20ad4d[m
+Author: mitoconstantIN <constantinmitocaru22@gmail.com>
+Date:   Sun Feb 23 15:12:51 2025 +0200
+
+    Contact Page
+
+[33mcommit 01bd8fda94170608e941dd4ca4c8e73b72f1b07b[m
+Merge: d0e9e34 c65598d
+Author: kevinvlad03 <vlad.dumitru1006@stud.fils.upb.ro>
+Date:   Sun Feb 23 12:40:41 2025 +0200
+
+    Merge branch 'feature/vlad'
+
+[33mcommit c65598d086b9700998f7225db05a0aba49e7f6e8[m[33m ([m[1;31morigin/feature/vlad[m[33m)[m
+Author: kevinvlad03 <vlad.dumitru1006@stud.fils.upb.ro>
+Date:   Sun Feb 23 12:40:06 2025 +0200
+
+    Micro:bit Page
+
+[33mcommit d0e9e3421e2c1fb39a69b6f9b094889b26dc63c0[m
+Author: gigibardan <gheorghe.bardan@gmail.com>
+Date:   Sun Feb 23 12:11:24 2025 +0200
+
+    fix rute header
+
+[33mcommit 91609b18e3aa7488de4fcef1a8093617242b5123[m
+Merge: 66f962a 0910f27
+Author: gigibardan <gheorghe.bardan@gmail.com>
+Date:   Sun Feb 23 11:48:42 2025 +0200
+
+    Merge branch 'main' into gigi
+
+[33mcommit 66f962aead21aad422877800776cc192a8efd748[m
+Author: gigibardan <gheorghe.bardan@gmail.com>
+Date:   Sun Feb 23 11:48:12 2025 +0200
+
+    added enrollment form iframe and updated main page
+
+[33mcommit 0910f277e6e0c9930b90caf24d713a8e4ae216d1[m
+Author: kevinvlad03 <vlad.dumitru1006@stud.fils.upb.ro>
+Date:   Sun Feb 23 00:16:46 2025 +0200
+
+    FIX
+
+[33mcommit dec17eb37c4be50d019cee29a438690183f0eb5f[m
+Author: kevinvlad03 <vlad.dumitru1006@stud.fils.upb.ro>
+Date:   Sat Feb 22 22:11:25 2025 +0200
+
+    Implementare Pagina LEGO PRIME
+
+[33mcommit b055122b022e19a6a4e3e5460c8a21bed0f5d345[m
+Merge: 6ffb5a4 ab80029
+Author: kevinvlad03 <vlad.dumitru1006@stud.fils.upb.ro>
+Date:   Sat Feb 22 21:30:48 2025 +0200
+
+    Merge branch 'main' of https://github.com/gigibardan/TMA into feature/vlad
+
+[33mcommit ab80029c13c986277bd120369421330a0326e894[m
+Author: mitoconstantIN <constantinmitocaru22@gmail.com>
+Date:   Sat Feb 22 21:21:47 2025 +0200
+
+    Delete trainers.html
+
+[33mcommit 9745e63c011785a99d7c473d7dbf77b1f67e6628[m
+Merge: f36e14d aefcfda
+Author: mitoconstantIN <constantinmitocaru22@gmail.com>
+Date:   Sat Feb 22 21:17:28 2025 +0200
+
+    Merge branch 'main' of github.com:gigibardan/TMA into feature/costi
+
+[33mcommit 6ffb5a474291778ef7396f3fea7daf0c6e11cac1[m
+Merge: 4f98d86 aefcfda
+Author: kevinvlad03 <vlad.dumitru1006@stud.fils.upb.ro>
+Date:   Sat Feb 22 18:36:11 2025 +0200
+
+    Merge branch 'main' of https://github.com/gigibardan/TMA into feature/vlad
+
+[33mcommit aefcfdabec4502a6330611363509670c8aa2dca3[m
+Author: gigibardan <gheorghe.bardan@gmail.com>
+Date:   Sat Feb 22 18:20:57 2025 +0200
+
+    Am făcut modificări pe branch-ul meu
+
+[33mcommit f36e14d0bb1ebae5dac84998b1ff9db14cb9f926[m
+Author: mitoconstantIN <constantinmitocaru22@gmail.com>
+Date:   Sat Feb 22 16:55:09 2025 +0200
+
+    Added About us
+
+[33mcommit 4f98d86e47784af7ebfded7106f94a744a1f9e16[m
+Author: kevinvlad03 <vlad.dumitru1006@stud.fils.upb.ro>
+Date:   Sat Feb 22 11:28:24 2025 +0200
+
+    Lego Essentials Page NOT FINISHED
+
+[33mcommit a05e92ed9c7e66176908d1e24741e3d6d2871ede[m
+Author: kevinvlad03 <vlad.dumitru1006@stud.fils.upb.ro>
+Date:   Sat Feb 22 09:50:37 2025 +0200
+
+    Pagina Hero Robotica Display Cursuri
+
+[33mcommit 7187a4657e24f4f9dd86bbd933305a660f9eef36[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Sun Jan 26 13:51:38 2025 +0200
+
+    fix
+
+[33mcommit f63dc2da16ba1652f8e74f3f32f7fc1573b32195[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Sun Jan 26 13:36:12 2025 +0200
+
+    fix
+
+[33mcommit 6acab3e13a56406ec6b7de58afcc957bbae273ba[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Sun Jan 26 13:35:02 2025 +0200
+
+    fix
+
+[33mcommit 35588ba08a1c41132d710a93a709eab0d895d4e5[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Sun Jan 26 12:54:47 2025 +0200
+
+    fix
+
+[33mcommit bd7643cb348b8182f98e80007f7f83b1abf99727[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Sun Jan 26 12:42:49 2025 +0200
+
+    fix
+
+[33mcommit 65544c93b26ac1a3bfb556d2c823645a40a4aabc[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Sun Jan 26 12:32:44 2025 +0200
+
+    fix
+
+[33mcommit 9128855ea7ff5fb787001f1da32ecd7183adbaea[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Sun Jan 26 12:26:51 2025 +0200
+
+    fix
+
+[33mcommit b07d15f88a9221e01415c4c769aa7fac372d4961[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Sun Jan 26 12:22:28 2025 +0200
+
+    fix
+
+[33mcommit 9c4f69ad38ef3e1e98bb090338d589c2cd463207[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Sun Jan 26 12:15:57 2025 +0200
+
+    fix
+
+[33mcommit e28efad395960837616eb9c83eb9e25ada5e384b[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Sun Jan 26 12:12:14 2025 +0200
+
+    fix
+
+[33mcommit 76fa6d37b9fa019a1eb42b55926c4d77daaf9066[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Sun Jan 26 12:02:45 2025 +0200
+
+    fix
+
+[33mcommit df498a40bb1d1eb6762fc2c82d1dd461f280038a[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Sun Jan 26 11:54:08 2025 +0200
+
+    fix
+
+[33mcommit 3a7516883c2f1308fcc2444e02895c2599690f0b[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Sun Jan 26 11:23:10 2025 +0200
+
+    fix
+
+[33mcommit f15221788718ffc64c045729557ac3247ca43107[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Sat Jan 25 18:13:30 2025 +0200
+
+    texte
+
+[33mcommit 2a89ecffbb0ace9bbeee46e5394dd87fa43b185b[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Fri Jan 24 20:33:17 2025 +0200
+
+    imagini si animatii
+
+[33mcommit 9ffeead5c0292d25588ac212b43022af69c8df1e[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Fri Jan 24 19:34:55 2025 +0200
+
+    logonew
+
+[33mcommit bd7eebfcc407650a3289712dde109ea46a50a698[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Fri Jan 24 19:29:28 2025 +0200
+
+    logo
+
+[33mcommit 63044896ed955b47c9cef3320442f66a4b8a388e[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Fri Jan 24 17:58:26 2025 +0200
+
+    Fixed images
+
+[33mcommit e078a1080340757a9423635e6b71744cf66bea74[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Fri Jan 24 17:43:16 2025 +0200
+
+    Fixed CSS paths in index.html
+
+[33mcommit 45a6c5170b771d79332c52d6c96c3eeb6f11cce1[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Fri Jan 24 17:32:57 2025 +0200
+
+    Fixed CSS paths in index.html
+
+[33mcommit 41d642317f5f3572675c3a4654bd93e259c34ea3[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Fri Jan 24 17:26:00 2025 +0200
+
+    Initial commit
+
+[33mcommit 964043b6d452a0271581656376de8531d4945945[m
+Author: Gigi <gheorghe.bardan@gmail.com>
+Date:   Wed Jan 22 16:51:59 2025 +0200
+
+    Initial project structure
